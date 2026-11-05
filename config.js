@@ -14,7 +14,7 @@ window.WEDDING = {
   dateTimeText: "Saturday, 12 December 2026 • 10:30 AM onwards",
 
   venueName: "Eben Ezer Park Auditorium",
-  venueShort: "Eben Ezer Park Auditorium, Punalur",
+  venueShort: "Eben Ezer Park Auditorium, Punalur, Kerala",
   venueArea: "Pineapple Junction, Punalur, Kerala",
   address: "Eben Ezer Park Auditorium, Pineapple Junction, Punalur, Kerala",
   parking: "Ample parking space available.",
