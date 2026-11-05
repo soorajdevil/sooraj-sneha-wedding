@@ -9,7 +9,7 @@ from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DB = os.path.join(ROOT, "wishes.db")
-PUBLIC = {"/", "/index.html", "/config.js", "/script.js", "/style.css"}
+PUBLIC = {"/", "/index.html", "/config.js", "/scroll.js", "/scroll.css"}
 PUBLIC_DIRS = ("/images/", "/music/")
 lock = threading.Lock()
 last_post = {}  # ip -> timestamp, simple spam throttle

@@ -1,3 +1,22 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+
+# The old envelope version (envelope.html) stays in the repo as a backup but is hidden from visitors
+[[redirects]]
+  from = "/envelope.html"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/envelope"
+  to = "/"
+  status = 302
+  force = true
+
+# Earlier address of the scroll invitation, which is now the main page
+[[redirects]]
+  from = "/scroll.html"
+  to = "/"
+  status = 302
