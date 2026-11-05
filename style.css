@@ -20,7 +20,7 @@ body {
   background: #fff;
   font-size: 17px;
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 body.locked { overflow: hidden; }
 img { max-width: 100%; display: block; }
