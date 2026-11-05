@@ -149,6 +149,25 @@
     navigator.clipboard.writeText(W.address).then(() => showToast("Address copied")).catch(() => showToast(W.address));
   });
 
+  /* ---------- Add to calendar ---------- */
+  (function () {
+    const start = new Date(W.datetime), end = new Date(start.getTime() + 4 * 3600 * 1000);
+    const fmt = d => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    const title = `Wedding of ${W.groom} & ${W.bride}`;
+    const details = `${W.ceremonyNote || "Wedding celebration"}. ${W.parking || ""}`.trim();
+    document.getElementById("gcalBtn").href = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+      `&text=${encodeURIComponent(title)}&dates=${fmt(start)}/${fmt(end)}` +
+      `&details=${encodeURIComponent(details)}&location=${encodeURIComponent(W.address)}`;
+    // Show the button only while the wishes section (or the footer below it) is on screen
+    const float = document.getElementById("calFloat");
+    const visible = new Set();
+    const watch = new IntersectionObserver(entries => {
+      entries.forEach(en => en.isIntersecting ? visible.add(en.target) : visible.delete(en.target));
+      float.classList.toggle("show", visible.size > 0);
+    }, { threshold: 0.2 });
+    [document.getElementById("wishes"), document.querySelector(".footer")].forEach(el => el && watch.observe(el));
+  })();
+
   /* ---------- Guest wishes ---------- */
   const wishList = document.getElementById("wishList");
   const wishModal = document.getElementById("wishModal");

@@ -363,3 +363,18 @@ main > section:nth-of-type(even).section { background: var(--cream); box-shadow:
   .env-letter { width: 100%; padding: 2.4rem 1.1rem 1.6rem; }
   .card-details { grid-template-columns: 1fr; gap: 1rem; }
 }
+
+/* Floating add-to-calendar */
+.cal-float { opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .35s, transform .35s, visibility .35s; position: fixed; right: 1rem; bottom: 1rem; z-index: 70; display: flex; flex-direction: column; align-items: flex-end; gap: .5rem; }
+.cal-fab {
+  display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.1rem; border: 0; border-radius: 10px;
+  background: #2b2b2b; color: #fff; text-decoration: none; font: 400 .95rem var(--sans); cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.3);
+}
+.cal-fab:hover { background: #000; }
+.cal-menu { display: flex; flex-direction: column; background: #2b2b2b; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,.3); }
+.cal-menu[hidden] { display: none; }
+.cal-menu a { color: #fff; text-decoration: none; padding: .7rem 1.1rem; font: 400 .9rem var(--sans); cursor: pointer; }
+.cal-menu a:hover { background: #444; }
+.music-btn { bottom: 4.6rem; }
+.cal-float.show { opacity: 1; visibility: visible; transform: none; }
+.cal-fab img { width: 22px; height: 22px; border-radius: 4px; background: #fff; object-fit: contain; }
