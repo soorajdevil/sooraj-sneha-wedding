@@ -245,7 +245,11 @@ body:not(.locked) .hint { display: none; }
   .wish-viewport { flex: 0 0 100%; order: -1; }
   .wish-carousel.single .wish-nav { display: none; }
 }
-.closing { padding-bottom: 2rem; }
+/* same band as the alternating sections, run down over the sheet's bottom padding to reach the end of the paper */
+.closing {
+  padding-bottom: 6.8rem; margin-bottom: -4.8rem;
+  background: rgba(150, 118, 58, .15); border-top: 1px solid rgba(201,161,74,.3);
+}
 .closing .sign + .sign { margin-top: 0; color: var(--burgundy); }
 .closing .caps { font-size: .7rem; line-height: 1.8; }
 #rollUp { margin-top: 1.8rem; }
