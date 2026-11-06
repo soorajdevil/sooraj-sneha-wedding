@@ -16,7 +16,7 @@
     venueName: W.venueName, venueShort: W.venueShort, venueArea: W.venueArea, address: W.address,
     heroQuote: W.heroQuote, story1: W.story1, story2: W.story2,
     footerLine: `With love, gratitude and joy — ${g} & ${b}`,
-    footerMeta: `${String(d).padStart(2,"0")} · ${String(m+1).padStart(2,"0")} · ${y} • ${W.venueName}`,
+    footerMeta: `${String(d).padStart(2,"0")} · ${String(m+1).padStart(2,"0")} · ${y}`,
   };
   document.title = `${g} & ${b} — Wedding Invitation`;
   document.querySelectorAll("[data-bind]").forEach(el => { el.textContent = values[el.dataset.bind] ?? ""; });

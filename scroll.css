@@ -230,7 +230,8 @@ body:not(.locked) .hint { display: none; }
 .wish-carousel { display: flex; align-items: center; gap: .5rem; margin: 1.6rem 0 .4rem; }
 .wish-viewport { flex: 1; min-width: 0; overflow: hidden; padding: .4rem 0; touch-action: pan-y; }
 .wishes { display: flex; transition: transform .7s cubic-bezier(.65,0,.35,1); }
-.wish { flex: 0 0 100%; min-width: 0; padding: 1.6rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+/* cards share the tallest wish's height, so short wishes are centred rather than left at the top */
+.wish { display: flex; flex-direction: column; justify-content: center; flex: 0 0 100%; min-width: 0; padding: 1.6rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
 .wish p { font-size: 1.3rem; line-height: 1.5; color: var(--ink); overflow-wrap: anywhere; }
 .wish cite { display: block; margin-top: .9rem; font: normal 500 .72rem var(--caps); letter-spacing: .22em; color: var(--burgundy); }
 .wish-empty p { color: var(--muted); font-style: italic; }
@@ -240,6 +241,12 @@ body:not(.locked) .hint { display: none; }
 .wish-dots { display: flex; justify-content: center; gap: .5rem; margin-bottom: 1.6rem; min-height: 9px; }
 .wish-dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: #e2d7c3; transition: all .3s; }
 .wish-dots button.on { background: var(--gold); transform: scale(1.35); }
+/* phones: card takes the full width, arrows sit underneath */
+@media (max-width: 560px) {
+  .wish-carousel { flex-wrap: wrap; justify-content: center; gap: .6rem 1rem; }
+  .wish-viewport { flex: 0 0 100%; order: -1; }
+  .wish-carousel.single .wish-nav { display: none; }
+}
 .closing { padding-bottom: 2rem; }
 .closing .caps { font-size: .7rem; line-height: 1.8; }
 #rollUp { margin-top: 1.8rem; }
