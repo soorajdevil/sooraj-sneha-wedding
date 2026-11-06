@@ -10,8 +10,8 @@ window.WEDDING = {
 
   // Wedding date & time in local time (ISO, with IST offset)
   datetime: "2026-12-12T12:15:00+05:30",
-  muhurtham: "12:15 PM onwards",
-  dateTimeText: "Saturday, 12 December 2026 • 10:30 AM onwards",
+  muhurtham: "12:10 PM onwards",
+  dateTimeText: "Saturday, 12 December 2026 • 12:10 PM to 12:40 PM",
 
   venueName: "Eben Ezer Park Auditorium",
   venueShort: "Eben Ezer Park Auditorium, Punalur, Kerala",
