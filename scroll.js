@@ -15,7 +15,8 @@
     dateTime: W.dateTimeText, muhurtham: W.muhurtham,
     venueName: W.venueName, venueShort: W.venueShort, venueArea: W.venueArea, address: W.address,
     heroQuote: W.heroQuote, story1: W.story1, story2: W.story2,
-    footerLine: `With love, gratitude and joy — ${g} & ${b}`,
+    footerLine: "See you at our happily ever after",
+    footerNames: `${g} & ${b}`,
     footerMeta: `${String(d).padStart(2,"0")} · ${String(m+1).padStart(2,"0")} · ${y}`,
   };
   document.title = `${g} & ${b} — Wedding Invitation`;
@@ -388,7 +389,7 @@
   }
 
   tie.addEventListener("click", openScroll);
-  $(".roll.top").addEventListener("click", e => { if (e.target.closest(".tube, .rod")) openScroll(); });
+  $(".roll.top").addEventListener("click", e => { if (e.target.closest(".tube")) openScroll(); });
   $("#rollUp").addEventListener("click", rollUp);
 
   /* ---------- Guest wishes (same backend as the other versions) ---------- */

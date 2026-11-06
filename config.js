@@ -16,7 +16,7 @@ window.WEDDING = {
   venueName: "Eben Ezer Park Auditorium",
   venueShort: "Eben Ezer Park Auditorium, Punalur, Kerala",
   venueArea: "Pineapple Junction, Punalur, Kerala",
-  address: "Eben Ezer Park Auditorium, Pineapple Junction, Punalur, Kerala",
+  address: "Eben Ezer Park Auditorium, Pineapple Junction, Punalur, Kollam Dist, Kerala",
   parking: "Ample parking space available.",
   mapsLink: "https://www.google.com/maps/search/?api=1&query=Eben+Ezer+Park+Auditorium+Pineapple+Junction+Punalur+Kerala",
   // Original share link: https://maps.app.goo.gl/Hx7tC5eZJJ3iYK1FA

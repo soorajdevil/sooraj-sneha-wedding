@@ -42,7 +42,6 @@
 
       <!-- Top roll: tied with a ribbon and bow while closed (the ribbon itself is drawn by scroll.js) -->
       <div class="roll top">
-        <div class="rod"></div>
         <div class="tube"></div>
         <button type="button" class="ribbon" id="ribbonBtn" aria-label="Untie the ribbon to open the invitation"></button>
       </div>
@@ -147,6 +146,7 @@
           <footer class="blk reveal closing" id="closing">
             <div class="crest"><span data-bind="initialsAmp"></span></div>
             <p class="sign" data-bind="footerLine"></p>
+            <p class="sign" data-bind="footerNames"></p>
             <p class="caps" data-bind="footerMeta"></p>
             <button type="button" class="btn ghost" id="rollUp">↑ Roll up the scroll</button>
           </footer>
@@ -158,7 +158,6 @@
 
       <!-- Bottom roll: starts hidden behind the top roll and travels down as the parchment unrolls -->
       <div class="roll bottom">
-        <div class="rod"></div>
         <div class="tube"></div>
       </div>
     </div>
