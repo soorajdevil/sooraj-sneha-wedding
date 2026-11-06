@@ -57,15 +57,21 @@ body:not(.locked) .stage { padding-top: 5vh; }
 /* the roll image's edges curve inward at the middle, so the parchment tucks under both rolls to leave no gap */
 .scroll { --tuck-top: calc(var(--roll-h) * 16 / 208); --tuck-bottom: calc(var(--roll-h) * 24 / 208); }
 .roll.bottom { z-index: 2; margin-top: calc(var(--tuck-bottom) * -1); transition: margin-top var(--unroll) var(--ease); }
-.scroll.closed .roll.bottom { margin-top: calc(var(--tuck-top) - var(--roll-h)); }
+/* hidden once rolled up, so its shorter tassels don't show behind the top roll's long threads */
+.scroll.closed .roll.bottom { margin-top: calc(var(--tuck-top) - var(--roll-h)); visibility: hidden; transition: margin-top var(--unroll) var(--ease), visibility 0s var(--unroll); }
 /* Roll image: 3-slice, so only the plain middle stretches and the bands and gold ends keep their shape.
-   The roll itself is the top 208px of the 410px image; the tassels hang below it and don't catch taps. */
+   The roll itself is the top 208px of the 560px image; the tassels hang below it and don't catch taps. */
 .tube { position: absolute; inset: 0; z-index: 1; cursor: pointer; }
 .tube::before {
   --cap: calc(var(--roll-h) * 230 / 208);
-  content: ""; position: absolute; left: 0; right: 0; top: 0; height: calc(var(--roll-h) * 410 / 208);
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: calc(var(--roll-h) * 560 / 208);
   box-sizing: border-box; pointer-events: none; border: solid transparent; border-width: 0 var(--cap);
   border-image: url("images/scroll-roll.webp") 0 230 fill / 0 var(--cap) stretch;
+}
+/* the bottom roll keeps the image's original short threads (410px tall) */
+.roll.bottom .tube::before {
+  height: calc(var(--roll-h) * 410 / 208);
+  border-image-source: url("images/scroll-roll-short.webp");
 }
 
 /* ---------- Ribbon ---------- */
@@ -115,6 +121,8 @@ body:not(.locked) .hint { display: none; }
 .orn.bl { bottom: 22px; left: 18px; transform: scaleY(-1); } .orn.br { bottom: 22px; right: 18px; transform: scale(-1, -1); }
 
 .blk { padding: 2.6rem var(--pad) 3rem; }
+/* phones: less empty space between the top roll and the crest */
+@media (max-width: 560px) { .sheet { padding-top: 1.2rem; } .blk.head { padding-top: 1rem; } }
 /* every other section sits on a slightly darker band of the paper, so the sections read clearly */
 .sheet > section.blk:nth-of-type(odd) {
   background: rgba(150, 118, 58, .15);
@@ -146,6 +154,7 @@ body:not(.locked) .hint { display: none; }
   width: 78px; height: 78px; border-radius: 50%; margin: 0 auto 1.2rem; border: 1px solid var(--gold); display: grid; place-items: center;
   font: 400 1.55rem var(--script); white-space: nowrap; color: var(--burgundy); box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px rgba(201,161,74,.45);
 }
+@media (max-width: 560px) { .crest { width: 58px; height: 58px; margin-bottom: 1rem; font-size: 1.15rem; } }
 /* the date: one row between two gold rules, so it is easy to spot */
 .when {
   display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: clamp(.5rem, 3vw, 1.8rem);
